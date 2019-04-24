@@ -2,9 +2,14 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
-const router = express.Router()
+const router = express.Router();
+
+//conecta ao banco
+mongoose.connect('mongodb+srv://rodrigopereiradev:#Coltm4a1@cluster0-nyatq.mongodb.net/nodestr?retryWrites=true',
+    { useNewUrlParser: true });
 
 //Carrega as rotas
 const indexRoute = require('./routes/index-route');
